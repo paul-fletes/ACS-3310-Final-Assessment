@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@paul-fletes/acs-3310-js-date-library": "^1.0.1",
+    "@paul-fletes/acs-3310-js-string-library": "^1.0.5"
+  }
 }
