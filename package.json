@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
     "@paul-fletes/acs-3310-js-string-library": "^1.0.5",
     "date-fns": "^2.30.0",
     "fs": "^0.0.1-security"
