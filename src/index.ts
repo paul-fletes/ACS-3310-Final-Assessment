@@ -20,13 +20,33 @@ const purchasedFormatted = `Purchased: ${purchaseDate.toLocaleDateString('en-US'
 })}`
 console.log(purchasedFormatted)
 
-
-
 // Challege 3: Format and print date as "x time ago"
 const lastPaymentDate = new Date(dataObj.lastpayment);
 const lastPaymentFormatted = `Last Payment: ${formatDistanceToNow(lastPaymentDate, {
   addSuffix: true,
 })}`;
 console.log(lastPaymentFormatted)
+
+// Challenge 4: Format phone number
+export default function formatPhoneNumber(phone: string | number): string {
+  // Convert to string in case it's a number
+  const str = String(phone);
+
+  // Check if input has exactly 10 characters/numbers
+  if (str.length !== 10 || !/^\d{10}$/.test(str)) {
+    throw new Error('Invalid phone number input');
+  }
+
+  // Extract the area code, central office code, and line number
+  const areaCode = str.substring(0, 3);
+  const centralOfficeCode = str.substring(3, 6);
+  const lineNumber = str.substring(6, 10);
+
+  // Return the formatted phone number
+  return `(${areaCode}) ${centralOfficeCode}-${lineNumber}`;
+}
+
+const formattedPhoneNumber = formatPhoneNumber(dataObj.phone);
+console.log(`Phone: ${formattedPhoneNumber}`);
 
 
